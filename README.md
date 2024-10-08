@@ -5,7 +5,7 @@
 - [Problems Addressed](#problems-addressed)
 - [Research Questions](#research-questions)
 - [Datasets Overview](#datasets-overview)
-- [Project Structure](#project-structure)
+- [Initial Project Structure](#Initial-project-structure)
 - [Setup and reqruirements](#Setup-and-reqruirements)
 - [LLMs Code for Fairness and Bias Reduction](#llms-code-for-fairness-and-bias-reduction)
   - [1. Fine-Tuning GPT-3](#1-fine-tuning-gpt-3)
