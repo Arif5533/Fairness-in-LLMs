@@ -6,13 +6,12 @@
 - [Research Questions](#research-questions)
 - [Datasets Overview](#datasets-overview)
 - [Project Structure](#project-structure)
-- [Setup and reqruirements](#Setup and reqruirements)
+- [Setup and reqruirements](#Setup-and-reqruirements)
 - [LLMs Code for Fairness and Bias Reduction](#llms-code-for-fairness-and-bias-reduction)
   - [1. Fine-Tuning GPT-3](#1-fine-tuning-gpt-3)
   - [2. Bias Mitigation using BART](#2-bias-mitigation-using-bart)
   - [3. Analyzing Bias in Datasets](#3-analyzing-bias-in-datasets)
-- [Conclusion](#conclusion)
-- [Requirements](#requirements)
+  
 
 ## Introduction
 Large Language Models (LLMs) have emerged as transformative tools in various domains, particularly in education. These models, such as GPT-3 and BART, have the potential to enhance learning experiences, provide personalized educational content, and facilitate communication between students and educational systems. However, the deployment of LLMs also raises significant concerns regarding fairness, especially for underrepresented groups. This project aims to explore these challenges and develop solutions that ensure equitable outcomes in AI-driven learning environments.
@@ -149,4 +148,4 @@ def analyze_bias(dataset_path):
 analyze_bias('data/common_crawl_data.json')
 ```
 
-
+To be Continue.........
