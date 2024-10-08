@@ -82,7 +82,7 @@ pip install -r requirements.txt
 
 ## LLMs Code for Fairness and Bias Reduction
 
-### 1. Fine-Tuning GPT-3
+### 1-fine-tuning-gpt-3
 
 #### File: `src/fine_tune_gpt3.py`
 ```
