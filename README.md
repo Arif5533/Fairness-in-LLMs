@@ -16,7 +16,7 @@
 ## Introduction
 Large Language Models (LLMs) have emerged as transformative tools in various domains, particularly in education. These models, such as GPT-3 and BART, have the potential to enhance learning experiences, provide personalized educational content, and facilitate communication between students and educational systems. However, the deployment of LLMs also raises significant concerns regarding fairness, especially for underrepresented groups. This project aims to explore these challenges and develop solutions that ensure equitable outcomes in AI-driven learning environments.
 
-## Problems Addressed
+## Problems Addressing
 The project focuses on several critical issues:
 
 - **Bias in Training Datasets**: Many LLMs are trained on datasets that may not adequately represent diverse populations, leading to biased outputs that can negatively affect marginalized students.
@@ -42,3 +42,4 @@ The success of this project relies on utilizing diverse datasets that reflect th
 These datasets will be analyzed for bias and representation, ensuring that the models trained on them are more equitable.
 
 ## Project Structure
+
