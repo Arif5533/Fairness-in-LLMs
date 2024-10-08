@@ -1,4 +1,4 @@
-# Working Project :Large Language Models for Education
+# Working Project : Large Language Models for Education
 
 ## Table of Contents
 - [Introduction](#introduction)
