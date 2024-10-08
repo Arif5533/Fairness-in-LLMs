@@ -111,7 +111,7 @@ fine_tune_params = {
 response = openai.FineTune.create(**fine_tune_params)
 print("Fine-tuning response:", response)
 ```
-###Bias Mitigation using BART
+### 2-bias-mitigation-using-bart
 #### File: src/mitigate_bias_bart.py
 
 ```
@@ -132,6 +132,21 @@ outputs = model.generate(**inputs)
 output_text = tokenizer.decode(outputs, skip_special_tokens=True)
 
 print("Output after bias mitigation:", output_text)
+```
+### 3-analyzing-bias-in-datasets
+```
+import pandas as pd
+def analyze_bias(dataset_path):
+    # Load dataset for analysis
+    df = pd.read_json(dataset_path)
+    
+    # Basic analysis to check representation of different groups
+    representation_summary = df['group'].value_counts()
+    
+    print("Representation Summary:")
+    print(representation_summary)
+
+analyze_bias('data/common_crawl_data.json')
 ```
 
 
