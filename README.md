@@ -6,6 +6,7 @@
 - [Research Questions](#research-questions)
 - [Datasets Overview](#datasets-overview)
 - [Project Structure](#project-structure)
+- [Setup and reqruirements](#Setup and reqruirements)
 - [LLMs Code for Fairness and Bias Reduction](#llms-code-for-fairness-and-bias-reduction)
   - [1. Fine-Tuning GPT-3](#1-fine-tuning-gpt-3)
   - [2. Bias Mitigation using BART](#2-bias-mitigation-using-bart)
@@ -41,5 +42,96 @@ The success of this project relies on utilizing diverse datasets that reflect th
 
 These datasets will be analyzed for bias and representation, ensuring that the models trained on them are more equitable.
 
-## Project Structure
+## Initial Project Structure
+```bash
+│
+├── data/
+│ ├── training_data.jsonl # Custom training dataset
+│ ├── common_crawl_data.json # Filtered Common Crawl dataset
+│ └── bias_analysis_results.csv # Results from bias analysis
+│
+├── src/
+│ ├── fine_tune_gpt3.py # Script for fine-tuning GPT-3
+│ ├── mitigate_bias_bart.py # Script for bias mitigation using BART
+│ └── analyze_bias.py # Script for analyzing bias in datasets
+│
+├── models/
+│ ├── gpt3_model_finetuned.pth # Fine-tuned GPT-3 model
+│ └── bart_model_finetuned.pth # Fine-tuned BART model
+│
+├── requirements.txt # Required Python packages
+└── README.md
+```
+## Setup and reqruirements
+Clone the Repository:
+``` 
+git clone https://github.com/Arif5533/Fairness-in-LLMs.git
+cd Fairness-in-LLMs
+```
+Create a Virtual Environment (recommended):
+```
+python -m venv venv      # Create a virtual environment named 'venv'
+source venv/bin/activate # Activate the virtual environment (Linux/Mac)
+.\venv\Scripts\activate  # Activate the virtual environment (Windows)
+```
+Install Requirements:
+To install all necessary Python packages listed in requirements.txt, run:
+```
+pip install -r requirements.txt
+```
+
+## LLMs Code for Fairness and Bias Reduction
+
+### 1. Fine-Tuning GPT-3
+
+#### File: `src/fine_tune_gpt3.py`
+```
+import openai
+import json
+
+# Initialize OpenAI API
+openai.api_key = 'YOUR_API_KEY'
+
+# Load custom training data
+def load_training_data(file_path):
+    with open(file_path, 'r') as f:
+        return json.load(f)
+
+training_data = load_training_data('data/training_data.jsonl')
+
+# Fine-tuning parameters
+fine_tune_params = {
+    "model": "davinci",
+    "training_data": training_data,
+    "n_epochs": 4,
+    "learning_rate_multiplier": 0.1,
+}
+
+# Fine-tune model
+response = openai.FineTune.create(**fine_tune_params)
+print("Fine-tuning response:", response)
+```
+###Bias Mitigation using BART
+#### File: src/mitigate_bias_bart.py
+
+```
+from transformers import BartForConditionalGeneration, BartTokenizer
+
+# Load pre-trained BART model and tokenizer
+model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
+tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
+
+# Define input text with potential biases
+input_text = "Your biased input text here."
+
+# Tokenize input text
+inputs = tokenizer(input_text, return_tensors="pt")
+
+# Generate output with bias mitigation techniques applied
+outputs = model.generate(**inputs)
+output_text = tokenizer.decode(outputs, skip_special_tokens=True)
+
+print("Output after bias mitigation:", output_text)
+```
+
 
