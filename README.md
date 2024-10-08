@@ -90,7 +90,7 @@ import openai
 import json
 
 # Initialize OpenAI API
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = 'sk_test_4eC39HqLyjWDarjtT1zdp7dc'
 
 # Load custom training data
 def load_training_data(file_path):
