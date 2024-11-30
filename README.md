@@ -1,4 +1,4 @@
-Large Language Models for Education
+# Large Language Models for Education
 
 ## Table of Contents
 - [Introduction](#introduction)
