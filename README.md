@@ -88,17 +88,17 @@ pip install -r requirements.txt
 import openai
 import json
 
-# Initialize OpenAI API
+
 openai.api_key = 'sk_test_4eC39HqLyjWDarjtT1zdp7dc'
 
-# Load custom training data
+
 def load_training_data(file_path):
     with open(file_path, 'r') as f:
         return json.load(f)
 
 training_data = load_training_data('data/training_data.jsonl')
 
-# Fine-tuning parameters
+
 fine_tune_params = {
     "model": "davinci",
     "training_data": training_data,
@@ -106,7 +106,7 @@ fine_tune_params = {
     "learning_rate_multiplier": 0.1,
 }
 
-# Fine-tune model
+
 response = openai.FineTune.create(**fine_tune_params)
 print("Fine-tuning response:", response)
 ```
@@ -116,14 +116,15 @@ print("Fine-tuning response:", response)
 ```
 from transformers import BartForConditionalGeneration, BartTokenizer
 
-# Load pre-trained BART model and tokenizer
+
 model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
 
-# Define input text with potential biases
-input_text = "Your biased input text here."
 
-# Tokenize input text
+input_text = "The advancements in technology have positively impacted various industries."
+
+
+
 inputs = tokenizer(input_text, return_tensors="pt")
 
 # Generate output with bias mitigation techniques applied
@@ -136,10 +137,10 @@ print("Output after bias mitigation:", output_text)
 ```
 import pandas as pd
 def analyze_bias(dataset_path):
-    # Load dataset for analysis
+
     df = pd.read_json(dataset_path)
     
-    # Basic analysis to check representation of different groups
+    # representation of different groups...
     representation_summary = df['group'].value_counts()
     
     print("Representation Summary:")
