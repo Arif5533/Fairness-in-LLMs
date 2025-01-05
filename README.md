@@ -121,7 +121,8 @@ model = BartForConditionalGeneration.from_pretrained('facebook/bart-large')
 tokenizer = BartTokenizer.from_pretrained('facebook/bart-large')
 
 
-input_text = "The advancements in technology have positively impacted various industries."
+input_text = "LLMs like GPT-3 and BART can improve education, but raise fairness concerns for underrepresented groups."
+
 
 
 
